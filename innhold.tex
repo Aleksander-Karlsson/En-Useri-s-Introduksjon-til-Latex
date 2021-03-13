@@ -4,6 +4,7 @@
     
     \subsection{Hva er \LaTeX?}
         Uttales lignende ``La-tek'' eller ``La-tech'' \underline{ikke} som gummistoffet kondomer er laget av. 
+        \LaTeX{} er et sett med makroer for \TeX{} som gjør det lettere å skrive dokumenter. \LaTeX{} gir det deg standard makroer for mange funksjoner som f.eks seksjoner. Tenk på  \LaTeX{} som en mer brukervennlig utviding av \TeX.
         % TODO: Forklar hva det er
     
     \subsection{Hva er Overleaf?}
@@ -16,42 +17,69 @@
         PPPS: Hvorfor ikke koble til GitHub-kontoen din når du først er i gang?}
     
     \subsection{Hvorfor \LaTeX?}
-        \LaTeX\hspace{1pt} har en brattere læringskurve enn andre vanlige tekstbehandlingsprogrammer, men til gjengjeld får du fullstendig kontroll over resultatet. Dette gir (som oftest) et \textit{\textbf{S E  X Y}}, profesjonelt og ryddig resultat.
+        \LaTeX{} har en brattere læringskurve enn andre vanlige tekstbehandlingsprogrammer, men til gjengjeld får du fullstendig kontroll over resultatet. Dette gir (som oftest) et \textit{\textbf{S E  X Y}}, profesjonelt og ryddig resultat. Med det sagt så er ikke \LaTeX{} for alle, men hvor mange kjenner du som faktisk kan å bruke Word sikkerlig anyways?
         
         Kort sagt, har du forøkt å skrive matematiske formler i Word/Docs vil livet ditt bli bli lang lettere med \LaTeX!
-        Om du bare ønsker denne funksjonaliteten finnes det programmer som lar deg gjøre om formler fra \LaTeX\hspace{1pt} til andre programmer.
+        Om du bare ønsker denne funksjonaliteten finnes det programmer som lar deg gjøre om formler fra \LaTeX{} til andre programmer.
         
-        % TODO: Math, figurer.
-        
+        \LaTeX{} er veldig populært i noen deler av akademia. Så mye som 97\% av artikler publisert innen mattematikk er skrevet i \LaTeX{}, og det er mange ressurser og formuer tilgjengelig for tips og hjelp!
+        Det er også populært i felt som Statistikk (89\%), Fysikk (74\%) og Datateknologi (46\%) \cite{brischoux2009don}. For humaniora og andre fag er bruken mindre utbredt, og totalen bland de undersøkte feltene viste at rundt 27\% av alle publiserte artikler er skrevet i \LaTeX. 
     
 %\section{Terminologi}
 \section{Ting og tang i Overleaf}
     Her forsøkes det å definere forskjellige begreper og knapper som vil brukes videre i denne guiden.
     
     \subsection{Knapper og innstillinger i Overleaf}
-        Det er to hovedområder i Overleaf. Til høyre er PDFen. Dette er det ``ferdige'' produktet \LaTeX\hspace{1pt} genererer fra informasjonen til venstre. Til venstre er tekstområdet. Det er her man skriver teksten og kommandoene som vil vises i PDFen.
+        Det er to hovedområder i Overleaf. Til høyre er PDFen. Dette er det ``ferdige'' produktet \LaTeX{} genererer fra informasjonen til venstre. Til venstre er tekstområdet. Det er her man skriver teksten og kommandoene som vil vises i PDFen.
         
-        På bildet under er det fremhevet et par viktige knapper.
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=\textwidth]{bilder/Latex-guide-pdf.png}
+            \caption{Oversikt over PDF-området i et Overleaf-vindu}
+            \label{fig:oversikt-overleaf-pdf}
+        \end{figure}
+    
+        I figur \ref{fig:oversikt-overleaf-pdf} er det fremhevet et par viktige knapper i PDFen.
         \begin{enumerate}
             \item Recompile laster inn PDFen på nytt. Dvs alt som er gjort siden sist vil vises på PDF-en. Hvis du er i tekstområdet vil du også kunne klikke ctrl+s eller cmd+s for å rekompilere.
-            \item Ved siden av recompile kan du klikke for å se på feilmeldinger. Dersom det vises et rødt tall her er det lurt å ta en titt. I eksempelet er det gult, dette er advarsler som kan være greit å løse, men det er ofte ikke essensielt å gjøre noe med.
-            \item main.tex er det standarde navnet for grunnfilen. Det er denne filen som \LaTeX\hspace{1pt} leser når den skal lage PDFen. Ikke endre navnet dette navnet med mindre du vet hva du gjør.
-            \item Øverst til venstre er innstillinger for Overleaf, denne vises nærmere i figur \ref{fig:innstillinger-overleaf}. 
+            \item Ved siden av recompile kan du klikke for å se på feilmeldinger. Dersom det vises et rødt tall her er det lurt å ta en titt. Mer om dette i seksjon \ref{sec:feilmeldinger}.
+            \item Last ned PDF. Husk å recompile før du trykker på denne knappen for å få med alle endringer!
+            \item Review åpner kommentarfeltet i tekstområdet, og lar deg se gjennom dine og andres kommentarer.
+            \item Share lar deg dele prosjektet med andre, via link eller epost. Husk edit-link hvis de skal få skrive i dokumentet!
+            \item $\rightarrow$ symbolet vil ta deg fra linjen du er på i tekstområdet til nogenlunde riktig sted i PDFen. Dette funker andre veien, bare dobbeltklikk i PDFen for å komme til nogenlunde riktig sted i tekstområdet.
+            \item Denne knappen skjuler PDFen. Jeg bruker den sjeldent, men nå har du en pekepinn på hvorfor PDFen din plutselig forsvant!
         \end{enumerate}
         
+            % \item main.tex er det standarde navnet for grunnfilen. Det er denne filen som \LaTeX{} leser når den skal lage PDFen. Ikke endre navnet dette navnet med mindre du vet hva du gjør.
+            % \item Øverst til venstre er innstillinger for Overleaf, denne vises nærmere i figur \ref{fig:innstillinger-overleaf}. 
         % TODO: Legg til resizing av vinduer + kanskje mer fra overleaf sin side.
         
         
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[width=\textwidth]{bilder/overleaf-1.png}
-        \caption{Et typisk Overleaf-vindu}
-        \label{fig:oversikt-overleaf}
-    \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{bilder/latex-guide-tekstområdet.png}
+            \caption{Oversikt over tekstområdet i et Overleaf-vindu}
+            \label{fig:oversikt-overleaf-tekstområdet}
+        \end{figure} 
+        
+        I figur \ref{fig:oversikt-overleaf-tekstområdet} er det fremhevet et par viktige knapper i tekstområdet.
+        \begin{enumerate}
+            \item Menyen til Overleaf, mer om dette i figur \ref{fig:innstillinger-overleaf}.
+            \item Tre knapper:
+            \begin{enumerate}
+                \item Lag ny fil: lag en ny fil i prosjektet. F.eks innhold.tex, eller referanser.bib.
+                \item Ny mappe: Opprett mapper, f.eks bildemappe.
+                \item Last opp: Last opp filer til prosjektet, f.eks bilder.
+            \end{enumerate}
+            \item Prosjektnavnet: Endrer kun navnet for hva prosjektet heter i Overleaf, ikke tittel e.l.
+            \item Viser kommentarer. Samme funksjon som knapp 4 i figur \ref{fig:oversikt-overleaf-pdf}.
+            \item Skjuler sidemenyen.
+            \item main.tex, filen \LaTeX{} leser først.
+        \end{enumerate}
     
-    Hvis du trykker på knapp 4. i figur \ref{fig:oversikt-overleaf} vil du få opp denne menyen. \textbf{Wordcount} teller antall ord som vises i PDFen, og \textbf{Spell Check} bør byttes til språket du skriver i så du slipper fryktelig mange røde streker i tekstområdet. Dette er ikke verdens beste stavekontroll, så ikke følg forslagene den kommer med slavisk, og les over før du leverer!
+    Hvis du trykker på knapp 4 i figur \ref{fig:oversikt-overleaf-tekstområdet} vil du få opp denne menyen. \textbf{Wordcount} teller antall ord som vises i PDFen, og \textbf{Spell Check} bør byttes til språket du skriver i så du slipper fryktelig mange røde streker i tekstområdet. Dette er ikke verdens beste stavekontroll, så ikke følg forslagene den kommer med slavisk, og les over før du leverer!
     \textbf{Compiler} er sjeldent nødvendig å endre, men i noen tilfeller kan det være nyttig. Hvis i tvil bruk standarden pdfLaTeX som kompilator!
-    \textbf{Editor Theme} gir deg muligheten til å endre fargeskjemaet i teksområdet. Er du et nattdyr vil du kanskje sette pris på et mørkere tema enn standarden.
+    \textbf{Editor Theme} gir deg muligheten til å endre fargeskjemaet i tekstområdet. Er du et nattdyr vil du kanskje sette pris på et mørkere tema enn standarden.
     
     {\tiny PS: Her kan du også bytte til VIM hvis du vil minske sjansen for å finne en romantisk partner med ~69 \%}
     
@@ -314,7 +342,7 @@
 \end{figure}
         \end{verbatim}
         
-        [H] setter hvor streng \LaTeX\hspace{1pt} skal være når det plasserer bildet. ``H'' er here (og \textbf{krever} \textbackslash usepackage\{float\}) Hvis du vil ha en mindre streng plassering/ikke lyst til å lese seksjonen om usepackages kan du prøve ``h'' eller ``h!''.
+        [H] setter hvor streng \LaTeX{} skal være når det plasserer bildet. ``H'' er here (og \textbf{krever} \textbackslash usepackage\{float\}) Hvis du vil ha en mindre streng plassering/ikke lyst til å lese seksjonen om usepackages kan du prøve ``h'' eller ``h!''.
         
         \textbackslash centering midtstiller bildet i det horisontale planet.
         
@@ -622,25 +650,12 @@
 
     Her ser vi et par små tabeller med litt forskjellige stiler. Om teksten skal være sentrert, venstre- eller høyrestilt kommer an på typen og langden på innholdet. Dette kan være uavhengig fra kolonne til kolonne. Bruk det som passer best for innholdet!
     
-    \textit{PS: Vil du lage stilrene og sexy tabeller? Da dropper du vertikale linjer!}
+    % \textit{PS: Vil du lage stilrene og sexy tabeller? Da dropper du vertikale linjer!}
+    \textit{PS: Vil du lage lettleste, sexy og stilrene tabeller? Da vil jeg argumentere for å droppe vertikale linjer! Mellomrom (whitespace) mellom kolonnene ser mye bedre ut og fører sjeldent til et mindre leselig resultat. Sjekk ut \textbackslash arraystretch hvis du vil ha mer mellomrom\footnote{\protect\url{https://www.overleaf.com/learn/latex/Questions/How_do_I_change_column_or_row_separation_in_LaTeX_tables\%3F}}. Du kan også ta en titt i fila abolish-vertical-lines.tex i dette prosjektet (husk å rekompiler) for å se flere eksempler på tabeller med og uten vertikale linjer!}
 
-% % Eks tabell som ser helt forferdelig ut men som viser de mest brukte funksjonene i tabeller:
-% \begin{table}[h!]
-%     \centering
-%     \caption{tekst som forklarer tabellen}
-%     \label{tab:my_label}
-%     \vspace{2mm}
-%     \begin{tabular}{|rc|l||r} % Setter stilen på kolonnene, "c" er centered, "l" og "r" er right/left adjusted, "|" gir en strek mellom, men det er fint mulig å ikke ha strek, eller f.eks dobbeltstrek
-%         \hline
-%         \textbf{Lorem} & \textbf{ipsum} & \textbf{dolor} & \textbf{sit} \\ \hline
-%         amet,          & consectetur    & adipiscing     & elit, \\ 
-%         sed            & do             & eiusmod        & tempor \\ \hline\hline %\hline setter linje mellom radene
-%         incididunt     & ut             & labore         & et \\
-%     \end{tabular}
-% \end{table}
 
     \subsection{Looooooongtable}
-        Har du lyst til å lage en longboi? Tar den mer plass enn det er på en side? Da er longtable noe for deg. 
+        Har du lyst til å lage en longboi? Tar den mer plass enn det er på en side? Da er longtable noe for deg. Men gidder jeg forklare det? Nopp. Finn det ut selv eller spør om hjelp.
 
         
     % \subsection{Makecell}
@@ -695,7 +710,7 @@
         
         Nå kan vi også referere i teksten til denne overskriften:
         
-        I avsnitt \ref{sec:figurer} vil du finne figurer. Informasjon om bilder finner du i \ref{sec:bilder}.
+        I avsnitt \ref{sec:figurer} vil du finne figurer. Informasjon om bilder finner du i \ref{sec:bilder}.\\
         
         Hvis du ønsker å referere til sidetallet er også dette mulig med \textbackslash pageref.
         \begin{verbatim}
@@ -759,12 +774,15 @@
         
         You Only Look Once (YOLO) is a cool and viable real-time image recognition approach \cite{DBLP:yolo9000}. 
         
-        Eks feil for IEEE. Her er det ikke mellomrom mellom ``approach'' og ``[1]'':\\
+        Vanlig feil for IEEE er å ikke ha mellomrom mellom ``approach'' og ``\cite{DBLP:yolo9000}'':\\
         You Only Look Once (YOLO) is a cool and viable real-time image recognition approach\cite{DBLP:yolo9000}.
         
-        Det (riktige eksempelet) ser ut som dette:
         \begin{verbatim}
-    You Only Look Once (YOLO) is a cool and viable real-time image recognition approach \cite{DBLP:yolo9000}. 
+        Feil:
+        approach\cite{DBLP:yolo9000}. 
+        
+        Riktig:
+        approach \cite{DBLP:yolo9000}. 
         \end{verbatim}
         
         Her er det altså \textbackslash cite som gjør jobben. Det er også mulig å bruke \textbackslash parencite for å få parenteser rundt referansen (ikke relevant for denne stilen), eller \textbackslash footcite for å få referansen i fotnotene i stede.
@@ -777,7 +795,7 @@
 
 \section{Prosjekt- og mappestruktur}
     \subsection{Indentation}
-        Som nevnt tidligere er jeg en forkjemper for å bruke innrykk i tekstområdet. Har du hatt ITGK (Python) bør dette virke kjent. Essensielt koker argumentet mitt ned til at det gjør det gjør tekstområdet penere, lettere å finne fram i og gjør det lettere å finne feil. Den eneste bekostningen er at du må klikke ``tab'' et par ganger.
+        Som nevnt tidligere er jeg en forkjemper for å bruke innrykk i tekstområdet. Har du hatt ITGK (Python) bør dette virke kjent. Essensielt koker argumentet mitt ned til at det gjør tekstområdet penere, lettere å finne fram i og gjør det lettere å finne feil. Den eneste bekostningen er at du må klikke ``tab'' et par ganger.
         
     \subsection{Mapper og filnavn}
         Dette prosjektet er ikke så fryktelig stort, og krever ikke god mappestruktur. Det er fortsatt lurt å gjøre det til en vane slik at det er lettere for deg og andre å navigere filene. Bilde-mappen er ganske grei å ha hvis du skal sette inn bilder.
@@ -787,13 +805,14 @@
         1-Introduksjon.tex\\
         2-Diskusjon.tex\\
         3-Konklusjon.tex\\
-                
+        
+        Hvis du deler opp i filer slik som dette må du sette inn filene i main.tex. Dette gjøres ved \textbackslash input\{1-Introduksjon\}. I mainfila i dette prosjektet ser du eksempler på dette.
+        
     
 \section{Matte}
     \subsection{amsmath og andre pakker her}
-
-    LOL, hvis dere er så nerdete at dere tar matte finner dere ut av dette selv!
-må flexe litt fancy formler da. bare så dere ser hvor sexy det ser ut
+        %LOL, hvis dere er så nerdete at dere tar matte finner dere ut av dette selv!
+        % Må flexe litt fancy formler da. bare så dere ser hvor sexy det ser ut
 
 
         Veldig verdt å vite når man skriver formler er at og-tegnet gir deg ting som er under hverandre, så i eksempelet under kommer =-tegnene rett under hverandre og sørger for at det ser ryddig ut. 
@@ -843,7 +862,7 @@ må flexe litt fancy formler da. bare så dere ser hvor sexy det ser ut
     
     
     
-\section{Feilmeldinger}
+\section{Feilmeldinger} \label{sec:feilmeldinger}
     Klikk på knappen til høyre for ``Recompile''-knappen for å se feilmeldinger. 
         Hvis dere er flere som jobber samtidig bør du laste inn PDFen på nytt for å sjekke om det er noen andre sin feil at du får feilmeldinger.
         Du vil i de fleste feilmeldinger få linjetall / filnavn for å hjelpe deg å finne hvor feilen skjedde.
@@ -852,7 +871,7 @@ må flexe litt fancy formler da. bare så dere ser hvor sexy det ser ut
     \subsection{Gult = Kult}
         Dette er advarsler, de bør som regel fikses. 
     \subsection{Blått = Flott}
-        Overfull/underfull hbox/vbox er en vanlig melding å få. Dette betyr essensielt at \LaTeX\vspace{1pt} syntes noe tar opp for mye eller lite plass. F.eks vil figur \ref{fig:too_large_img} lage en overfull hbox ettersom den er for bred for margen og ikke minst siden. 
+        Overfull/underfull hbox/vbox er en vanlig melding å få. Dette betyr essensielt at \LaTeX{} syntes noe tar opp for mye eller lite plass. F.eks vil figur \ref{fig:too_large_img} lage en overfull hbox ettersom den er for bred for margen og ikke minst siden. 
         
         Er som regel ikke noe krise om du har et par av disse feilmeldingene, men de kan gi en pekepinn på hvor du kan gjøre dokumentet litt penere.
     \subsection{Grønt = Skjønt}
@@ -863,7 +882,7 @@ må flexe litt fancy formler da. bare så dere ser hvor sexy det ser ut
 \section{HvOrDan SpØrRe oM hJelP?}
     Seriøst, ikke vær personen som sier ``Jeg får ikke til tables kan du hjelpe?''. 
     Hvis du faktisk vil ha hjelp presenter både koden og resultatet/feilkoder.
-    Forventer du at noen andre skal ta tid ut av dagen sin for å hjelpe deg får du ta deg tid til å formulere spørsmålet skikkelig. Hvis \LaTeX\hspace{1pt} er nytt for deg er det fullt forståelig om ting kan virke uforståelig. Alt jeg ber om er at du forsøker å forklare problemet og hva du har lyst til å få til.
+    Forventer du at noen andre skal ta tid ut av dagen sin for å hjelpe deg får du ta deg tid til å formulere spørsmålet skikkelig. Hvis \LaTeX{} er nytt for deg er det fullt forståelig om ting kan virke uforståelig. Alt jeg ber om er at du forsøker å forklare problemet og hva du har lyst til å få til.
     
     \textit{PS: Bruk gjerne litt tid på å søke om noen har hatt et lignende problem, før du spør om hjelp.}
 
@@ -918,7 +937,7 @@ må flexe litt fancy formler da. bare så dere ser hvor sexy det ser ut
 \end{itemize}
 
 \section{Definere variabler}
-    \LaTeX\hspace{1pt} er Turingkomplett! Det vil si at du i teorien kan utføre alt et mer tradisjonelt kodespråk kan. Dette faktum gjelder også Powerpoint\footnote{\url{https://www.youtube.com/watch?v=uNjxe8ShM-8&feature=emb_title}}, og jeg vil ikke anbefale å bruke hverken av disse til ditt neste kodeprosjekt.
+    \LaTeX{} er Turingkomplett! Det vil si at du i teorien kan utføre alt et mer tradisjonelt kodespråk kan. Dette faktum gjelder også Powerpoint\footnote{\url{https://www.youtube.com/watch?v=uNjxe8ShM-8&feature=emb_title}}, og jeg vil ikke anbefale å bruke hverken av disse til ditt neste kodeprosjekt.
     
     
     \if

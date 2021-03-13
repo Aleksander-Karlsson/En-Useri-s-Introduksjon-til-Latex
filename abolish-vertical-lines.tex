@@ -1,0 +1,281 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{makecell}
+
+\title{The moral case for abolishing vertical lines}
+\author{Aleksander Karlsson}
+\date{March 2021}
+
+\begin{document}
+\maketitle
+
+
+\noindent Eks tabell som ser helt forferdelig ut men som viser de mest brukte funksjonene i tabeller:
+\begin{table}[h!]
+    \centering
+    \caption{tekst som forklarer tabellen}
+    \label{tab:my_label}
+    \vspace{2mm}
+    \begin{tabular}{|rc|l||r} % Setter stilen på kolonnene, "c" er centered, "l" og "r" er right/left adjusted, "|" gir en strek mellom, men det er fint mulig å ikke ha strek, eller f.eks dobbeltstrek
+        \hline
+        \textbf{Lorem} & \textbf{ipsum} & \textbf{dolor} & \textbf{sit} \\ \hline
+        amet,          & consectetur    & adipiscing     & elit, \\ 
+        sed            & do             & eiusmod        & tempor \\ \hline\hline %\hline setter linje mellom radene
+        incididunt     & ut             & labore         & et \\
+    \end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+    \caption{Mapping of Learning Objectives to Game Activity as in the table in} % TODO: cite Serious Gaming book table 6.1 og page 91
+    \label{tab:learningobjectives}
+    % \vspace{1mm}
+    \centering
+    \addtolength{\leftskip}{-12cm}
+    \addtolength{\rightskip}{-12cm}
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Learning objectives}  & \textbf{Learning activities} & \textbf{Game activities}\\\midrule%\Xhline{2\arrayrulewidth} %%\hline
+        
+        \makecell[l]{
+        Understand how the\\
+        value of users’ data\\ 
+        changes with its amount} & 
+        \makecell[l]{
+        Gather data based on\\
+        different techniques from\\
+        the perspective of a \\
+        corporation} & 
+        \makecell[l]{
+        Create subsidiaries that\\
+        generate data through legal \\
+        or illegal means. E.g. search-\\
+        motor, social network, hacking}\\\midrule 
+        
+        \makecell[l]{
+        Understand how different \\
+        types of users’ data can be\\
+        merged together for more value} & 
+        \makecell[l]{
+        Combine and trade your data\\
+        from multiple sources to\\
+        increase its value} & 
+        \makecell[l]{
+        Net-worth of your company\\
+        changes with the variety \\ 
+        and scarcity of the data gathered} \\\bottomrule
+    \end{tabular}
+\end{table}
+% VS
+\begin{table}[H]
+    
+    \caption{Mapping of Learning Objectives to Game Activity as in the table in} % TODO: cite Serious Gaming book table 6.1 og page 91
+    \label{tab:learningobjectives2}
+    % \vspace{1mm}
+    \centering
+    \addtolength{\leftskip}{-12cm}
+    \addtolength{\rightskip}{-12cm}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Learning objectives}  & \textbf{Learning activities} & \textbf{Game activities}\\\hline%\Xhline{2\arrayrulewidth} %%\hline
+        
+        \makecell[l]{
+        Understand how the\\
+        value of users’ data\\ 
+        changes with its amount} & 
+        \makecell[l]{
+        Gather data based on\\
+        different techniques from\\
+        the perspective of a \\
+        corporation} & 
+        \makecell[l]{
+        Create subsidiaries that\\
+        generate data through legal \\
+        or illegal means. E.g. search-\\
+        motor, social network, hacking}\\\hline
+        
+        \makecell[l]{
+        Understand how different \\
+        types of users’ data can be\\
+        merged together for more value} & 
+        \makecell[l]{
+        Combine and trade your data\\
+        from multiple sources to\\
+        increase its value} & 
+        \makecell[l]{
+        Net-worth of your company\\
+        changes with the variety \\ 
+        and scarcity of the data gathered} \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \caption{Overview of the concepts of the game}
+    \label{tab:overview}
+    \centering
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Title}  & 
+        \makecell[l]{
+            Data Hoarders
+        }\\\midrule
+        \textbf{Theme}  & 
+        \makecell[l]{
+            Data aggregation
+        }\\\midrule
+    
+        \textbf{Target group}  & 
+        \makecell[l]{
+            16+ teenager to adults\\ 
+            It is a complex idea
+        }\\\midrule% 18+ for strip club expansion
+        
+        \textbf{Genre}  & 
+        \makecell[l]{
+            Turn-based Strategic Game\\ 
+            Because it allows for weighing and thinking
+        }\\\midrule% Turn-based does not require you to be mechanically inclined, turn-timer to encourage risky behaviour (XCOM quote) 
+        
+        % Has elements of roleplaying and allows for roleplaying, since the player will take the role of the "bad guy" to obtain data and thus get a better understanding of value of data. 
+        
+        \textbf{Setting}  & 
+        \makecell[l]{
+            Real world\\
+            In order to analyse the risk taking it has\\
+            to be as close to the real world as possible
+        }\\\midrule
+        
+        \textbf{Constraints}  & 
+        \makecell[l]{
+            Turns have a time limit, and players can\\
+            adjust it before starting the game\\
+            Number of players: 2-8\\
+            Limited number of companies in each region in game 
+        }\\\midrule
+    
+        \textbf{Target platform}  & 
+        \makecell[l]{
+            Personal Computer\\
+            In such complex games the use of mouse and keyboard\\
+            will allow for presenting a lot of information
+        }\\\bottomrule
+    \end{tabular}
+\end{table}
+%VS
+\begin{table}[H]
+    \caption{Overview of the concepts of the game}
+    \label{tab:overview2}
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Title}  & 
+        \makecell[l]{
+            Data Hoarders
+        }\\\hline
+        \textbf{Theme}  & 
+        \makecell[l]{
+            Data aggregation
+        }\\\hline
+    
+        \textbf{Target group}  & 
+        \makecell[l]{
+            16+ teenager to adults\\ 
+            It is a complex idea
+        }\\\hline% 18+ for strip club expansion
+        
+        \textbf{Genre}  & 
+        \makecell[l]{
+            Turn-based Strategic Game\\ 
+            Because it allows for weighing and thinking
+        }\\\hline% Turn-based does not require you to be mechanically inclined, turn-timer to encourage risky behaviour (XCOM quote) 
+        
+        % Has elements of roleplaying and allows for roleplaying, since the player will take the role of the "bad guy" to obtain data and thus get a better understanding of value of data. 
+        
+        \textbf{Setting}  & 
+        \makecell[l]{
+            Real world\\
+            In order to analyse the risk taking it has\\
+            to be as close to the real world as possible
+        }\\\hline
+        
+        \textbf{Constraints}  & 
+        \makecell[l]{
+            Turns have a time limit, and players can\\
+            adjust it before starting the game\\
+            Number of players: 2-8\\
+            Limited number of companies in each region in game 
+        }\\\hline
+    
+        \textbf{Target platform}  & 
+        \makecell[l]{
+            Personal Computer\\
+            In such complex games the use of mouse and keyboard\\
+            will allow for presenting a lot of information
+        }\\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \caption{I tabeller skal denne ``bildeteksten'' være \textbf{OVER} tabellen!}
+    \label{tab:keybinds}
+    \centering
+    \begin{tabular}{cc}
+        Key & Description \\
+        \hline\hline
+        W & Move inwards \\
+        S & Move outwards \\
+        A & Move to the left \\
+        D & Move to the right \\\hline
+    \end{tabular}
+\end{table}
+% VS
+\begin{table}[H]
+    \caption{I tabeller skal denne ``bildeteksten'' være \textbf{OVER} tabellen!}
+    \label{tab:keybinds2}
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Key & Description \\\hline
+        W & Move inwards \\\hline
+        S & Move outwards \\\hline
+        A & Move to the left \\\hline
+        D & Move to the right \\\hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \caption{Tools we have chosen to support digital teamwork}
+    \label{tab:cooptools}
+    \vspace{1mm}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \#  & \textbf{Tool} & \textbf{Affordances}\\ \Xhline{2\arrayrulewidth} %\hline
+        1   & Miro          & \makecell[l]{Simultaneity, reviewability, revisability, \\enables creativity, interactive}\\\hline
+        2   & Discord       & Face2Face, audibility, visibility\\\hline
+        3   & Overleaf      & Simultaneity, reviewability, revisability, interactive\\\hline
+    \end{tabular}
+\end{table}
+% VS
+\begin{table}[H]
+    \caption{Tools we have chosen to support digital teamwork}
+    \label{tab:cooptools2}
+    \vspace{1mm}
+    \centering
+    \begin{tabular}{lll}
+        \#  & \textbf{Tool} & \textbf{Affordances}\\\toprule %\Xhline{2\arrayrulewidth} %\hline
+        1   & Miro          & \makecell[l]{Simultaneity, reviewability, revisability, \\enables creativity, interactive}    \\ \hline
+        2   & Discord       & Face2Face, audibility, visibility             \\ \hline
+        3   & Overleaf      & Simultaneity, reviewability, revisability, interactive    \\ 
+    \end{tabular}
+\end{table}
+
+
+
+
+\end{document}

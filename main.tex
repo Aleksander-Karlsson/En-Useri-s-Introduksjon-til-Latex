@@ -1,0 +1,81 @@
+\documentclass[a4paper, norsk, 12pt]{article}
+\usepackage[utf8]{inputenc}   
+\usepackage{graphicx} % Thingamajig for bilder
+\usepackage{float} % Muliggjør strengere posisjonering av f.eks figurer og tabeller. Eks strengeste posisjonering \begin{figure}[H] 
+\usepackage{parskip} % Enter enter gir mellomrom mellom paragrafer uten innrykk (indent / tab) 
+\usepackage{verbatim} % Visning av tekst/kode/symboler/filer uten å bli lest som kode. Hvis du ønsker highlighted kode foreslår jeg \usepackage{minted} i stede!
+\usepackage{csquotes} % Dependency reasons for babel, må stå før importen av babel!
+\usepackage[norsk]{babel} % Gir tabeller og figurer norske navn, f.eks står det "Referanser" i stede for "References"
+%\usepackage{array} 
+\usepackage{booktabs} % For penere streker tror jeg
+\usepackage[tableposition=top]{caption} % Fikser vspace for caption i tabeller
+\usepackage{longtable} % For å lage laaaaaange tabeller
+\usepackage{fancyhdr} % Fancy header 
+\usepackage{hyperref} % Gir korrekt fremstilling av lenker eks: \url{https://www.overleaf.com} og gjør de klikkbare. Obs obs, plasseringen av denne pakken har noe å si!
+\usepackage{amsmath} % Mattesymboler og funksjoner
+\usepackage{changepage} % For å kunne bruke \adjustwidt for å la noe gå ut over de fastsatte margene
+
+\input{tikz-settings} % Tikz-definisjonene ble litt vel lange så puttet det i en egen fil
+
+% \usepackage[acronym]{glossaries} % Pakke for å holde styr på akronymer, kan være grei ved større prosjekter.
+%\usepackage[ddmmyyyy]{datetime}
+% \usepackage{fontspec} % Lar oss bytte font
+
+\usepackage[
+  top=2cm,
+  bottom=2cm,
+%   left=2cm,
+%   right=2cm,
+  headheight=12pt,
+  includehead,includefoot,
+  heightrounded,
+]{geometry} % Standard marger er for store imo, nå er de mindre.
+
+% Bibliography management
+%  see https://www.overleaf.com/learn/latex/Biblatex_citation_styles
+%  and https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
+% to use overleaf with reference manager
+%  see: https://no.overleaf.com/blog/639-tip-of-the-week-overleaf-and-reference-managers
+\usepackage[
+    backend=biber, % Sets the backend to sort the bibliography, biber is the default one and recommended since it provides full localization for several commands and the styles for biber are easier to modify because they use standard LATEX macros.
+    style=ieee % Sets the reference style
+]{biblatex}
+\addbibresource{referanser.bib} % Imports bibliography file
+
+
+% Instillinger for fancyhdr 
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{Aleksander Karlsson}} % Tekst i venstre hjørne av header
+\rhead{\fancyplain{}{This is a \textit{\textbf{fancy}} header}} % Tekst i høyre hjørne av header
+
+\renewcommand{\arraystretch}{1.2} % Litt større mellomrom mellom hver rad i tabeller, standard er 1
+
+\title{En ganske usaklig introduksjon til Overleaf og \LaTeX} % Tittel for hele dokumentet
+
+\author{
+    Aleksander M. Karlsson\\
+    aleksander.mats.karlsson@gmail.com
+} % Forfatter(e)
+        
+\date{Februar 2021} % Dato
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Her begynner dokumentet         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+    \maketitle % Genererer tittel, forfatter og dato
+    % {\large \\Eilind Karlsson\\ Torjus Iveland\\ Maria Nylund \\}
+    \newpage
+    \tableofcontents % Genererer innholdsfortegnelse
+    \pagenumbering{gobble} % Gobbles up the page numbering >:)
+    
+    \newpage % Sørger for at resten av innholdet starter på ny side.
+    \pagenumbering{arabic} % Starter sidetall fra og med NÅ!
+    
+    \input{innhold} % Setter inn fila "innhold.tex" her
+    
+    \printbibliography % Genererer og viser referanselisten (samt overskriften Referanser)
+
+\end{document}

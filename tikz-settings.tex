@@ -1,0 +1,58 @@
+\usepackage{cancel} % Og denne for utstryking av to termer mot hverandre i en av ekvasjonene
+
+% Kanskje verdt å putte surret mitt for tikz-figurene ett annet sted og laste det inn her for å gjøre det mer lesbart om man ikke er interessert i tikz?
+
+\usepackage{tikz} %for tikz-figurer
+\usetikzlibrary{arrows, decorations.markings}
+\usetikzlibrary{decorations.pathreplacing, decorations.markings} % for spesielle piler i tikz-eksempel 2
+
+% Arrow at middle of line
+\tikzset{mid arrow/.style={postaction={decorate,decoration={ markings,
+    mark=at position .5 with {\arrow[#1]{stealth}}
+      }}},}
+
+% Noen av mine favoritt-kommandoer å ha for hånden. Den STORE fordelen med å definere ting som dette er at med ett tastetrykk kan du endre hvordan noe ser ut i hele teksten. 
+
+\newcommand{\Vect}{\mathcal{V}\textrm{ect}}
+\newcommand{\C}{\ensuremath{\mathcal{C}}}
+\newcommand{\ssg}{\scriptstyle}
+
+\newcommand{\ie}{i.e.\:} % OBS: Grunnen til \: etter e.g. etc er for å unngå unaturlig lange mellomrom pga punktumet, men betyr at teksten som følger må skrives rett etter uten mellomrom :) 
+\newcommand{\eg}{e.g.\:}
+\newcommand{\st}{s.t.\:}
+\newcommand{\cf}{c.f.\:}
+
+
+% For siste tikz-bildet:
+\def\Lcolor{red!10!black} 
+
+
+% Definerer en ny kommando for tikz. [4] betyr at kommandoen tar inn 4 argument/tall, de er senere referert til som #1 = argument 1 etc. Det denne kommandoen gjør er å tegne en halvsirkel. (#1, #2)= origin, så #1 gir x-koordinater for midten av (halv)sirkelen, #2=y-koordinatet til midten. arc fra 180 grader til 0 grader = definert som (1,0) hvis man tegner sirkelen i R^2, og 180 blir da (-1,0) så du får øverste halvdel av sirkelen med radius #3. Den siste delen tegner en strek fra toppen av halvsirkelen til #4 lengde opp. 
+\newcommand\drawMult[4]{
+    \draw[thick] (#1, #2) arc(180:0:#3); 
+    \draw[thick] (#1+#3, #2+#3)--(#1+#3, #2+#4);
+}
+
+\newcommand\drawDinat[5] {
+    \filldraw[fill=green!40, draw=\Lcolor, thick](#1-#3,#2) -- (#1+#3,#2) -- (#1,#2-#4) -- cycle;
+    \node [black,right=-1pt] at  (#1+#3,#2-#4/2)  {$ #5 $}; 
+}
+
+\newcommand\drawDinatE[5]{
+    \drawMult{#1}{#2}{#3}{#4} 
+    \drawDinat{#1+#3}{#2+1.2*#3}{0.6*#3}{0.6*#3}{#5}
+}
+
+\newcommand\drawOmega[3]{
+    \filldraw[fill=white, draw=black, thick] (#1 , #2) rectangle (#1+#3, #2+0.4*#3); 
+    \node[anchor=south] at (#1+0.5*#3, #2+0.4*#3) {\(\ssg \omega\)};
+}
+
+% Controls lar deg bøye linjer så de er nærmere controls-punktene (tenk deg at du klyper tak i linjen og drar den mot punktene som kommer etter controls + and, men linjen blir ikke nødvendigvis tvunget til å gå helt dit). Når man bruker disse må man nesten bare prøve seg litt fram for å se hva som ser bra ut til slutt. 
+
+\newcommand\drawBraiding[4]{
+    \draw[thick] (#1,#2).. controls (#1, #2+0.4*#4) and (#1+#3, #2+0.6*#4)..(#1+#3, #2+#4);
+    \draw[thick] (#1+#3, #2).. controls (#1+#3, #2+0.1*#4) and (#1+0.7*#3, #2+0.3*#4).. (#1+0.6*#3, #2+0.4*#4);
+    \draw[thick] (#1, #2+#4).. controls (#1, #2+0.9*#4) and (#1+0.4*#3, #2+0.6*#4).. (#1+0.4*#3, #2+0.6*#4); }
+
+\newcommand\drawRightEval[3]{\draw[thick](#1, #2) arc(180:0:#3); \draw[thick, ->] (#1+#3, #2+#3)--(#1+#3-0.08, #2+#3); }

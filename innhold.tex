@@ -699,8 +699,10 @@
     Dette er tekst som viser til figur \ref{fig:bordered_img}.
         \end{verbatim}
         Resultatet:
-            
+        
         Dette er tekst som viser til figur \ref{fig:bordered_img}.
+        
+        \autoref{fig:bordered_img}
         
         Her kan du også se at tallet i PDFen er klikkbar, og tar deg til den korrekte figuren. Denne funksjonaliteten fungerer også med formler, tabeller, overskrifter, underoverskrifter, osv. Ønsker jeg å referere til overskriften ``Figurer'' må også denne overskriften ha et label:
         \begin{verbatim}
@@ -817,7 +819,7 @@
 
         Veldig verdt å vite når man skriver formler er at og-tegnet gir deg ting som er under hverandre, så i eksempelet under kommer =-tegnene rett under hverandre og sørger for at det ser ryddig ut. 
 
-        Note: har også kommandoen Big for ekstra store paranteser (men kan brukes før andre ting også) for å gjøre ligninger med flere paranteser e.l. mer lesbare. Funker helt likt med andre størrelser (google it). Kan også bruke den mer dynamiske løsningen med left og right, som her \(F = G \left(  \frac{m_1 m_2}{r^2} \right)\). Viktig at både left og right skrives ut, ellers blir latex sur!
+        Note: har også kommandoen \textbackslash Big for ekstra store paranteser (men kan brukes før andre ting også) for å gjøre ligninger med flere paranteser e.l. mer lesbare. Funker helt likt med andre størrelser (google it). Kan også bruke den mer dynamiske løsningen med left og right, som her \(F = G \left(  \frac{m_1 m_2}{r^2} \right)\). Viktig at både left og right skrives ut, ellers blir \LaTeX{} sur!
 
         \footnotesize %for at hele ligningen skal få plass gjør jeg skriften litt mindre. 
         \begin{adjustwidth}{-4cm}{-4cm}
@@ -887,20 +889,27 @@
     \textit{PS: Bruk gjerne litt tid på å søke om noen har hatt et lignende problem, før du spør om hjelp.}
 
 \section{Ressurser}
+    Følger du stegene i ``HvOrDan SpØrRe oM hJelP?'' vil du nok treffe på flere av disse sidene:
+    \begin{itemize}
+        \item Overleaf har mange gode templates og guides\\ \url{https://www.overleaf.com/learn}
+        \item \LaTeX{} Stack Exchange er et forum dedikert til alt \TeX{}\\ \url{https://tex.stackexchange.com/} 
+        \item Slack: Er du medlem av Online Linjeforening tenker jeg å sette opp en egen TeX-support kanal (dersom det er interesse for dette). Eventuelt er supportkanalen alltid et godt sted å spørre om hjelp.
+    \end{itemize}
     
     % Messenger + Latex.
     % TODO: Lag en TeX-support kanal på slack
 
 \section{Nyttige funksjoner}
-    ctrl shift 7. Spesielt hvis du markerer mye tekst.
-    tab / shift tab
+    \begin{itemize}
+        \item ctrl+shift+7: Kommenterer inn/ut (\%) alle linjer du har markert (shift+piltaster).
+        \item tab / shift tab: Indenterer alle markert tekst til høyre / venstre.
+        \item \textbackslash newpage dytter alt under til neste side.
+        \item \textbackslash hspace\{ 1cm \}: Lager horisontalt mellomrom med egendefinert lengde.
+        \item \textbackslash vspace\{ 1cm \}: Lager vertikalt mellomrom med egendefinert lengde.
+    \end{itemize}
     makebox ? er det en sub greie av geometry?
-    vspace
-    hspace
-    hline
     align?
     appendix
-    newpage
     cleardoublepage
     
 

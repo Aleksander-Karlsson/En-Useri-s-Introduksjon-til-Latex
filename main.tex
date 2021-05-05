@@ -1,11 +1,13 @@
 \documentclass[a4paper, norsk, 12pt]{article}
 \usepackage[utf8]{inputenc}   
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[norwegian]{babel} % Gir tabeller og figurer norske navn, f.eks står det "Referanser" i stede for "References" Følg med, dette funker ikke heeelt som det skal.
 \usepackage{graphicx} % Thingamajig for bilder
 \usepackage{float} % Muliggjør strengere posisjonering av f.eks figurer og tabeller. Eks strengeste posisjonering \begin{figure}[H] 
 \usepackage{parskip} % Enter enter gir mellomrom mellom paragrafer uten innrykk (indent / tab) 
 \usepackage{verbatim} % Visning av tekst/kode/symboler/filer uten å bli lest som kode. Hvis du ønsker highlighted kode foreslår jeg \usepackage{minted} i stede!
 \usepackage{csquotes} % Dependency reasons for babel, må stå før importen av babel!
-\usepackage[norsk]{babel} % Gir tabeller og figurer norske navn, f.eks står det "Referanser" i stede for "References"
 %\usepackage{array} 
 \usepackage{booktabs} % For penere streker tror jeg
 \usepackage[tableposition=top]{caption} % Fikser vspace for caption i tabeller
